@@ -1,0 +1,8 @@
+How to start Apache Tomcat on Mac
+
+cd apache-tomcat-9.0.58
+cd bin
+ls -al *.sh
+chmod +x *.sh
+./startup.sh
+./shutdown.sh
