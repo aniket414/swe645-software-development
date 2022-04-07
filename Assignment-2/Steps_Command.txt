@@ -1,0 +1,61 @@
+Present Working Directory: Assignment-2
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+Steps to build docker image
+
+Build Docker Image
+docker build -f infra/Dockerfile --tag survey:v0.1 .
+
+Docker build for running on linux
+docker buildx build --platform linux/amd64  -f infra/Dockerfile --tag survey:v0.1 .
+
+Run Docker Image
+docker run -it -p 8085:8080 survey:v0.1
+
+If the tomcat homepage is not visible SSH into Docker container
+docker exec -it container-name  /bin/bash
+
+cp -r webapps.dist/* webapps/
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+Setting up using EKS
+
+Setup AWS CLI
+Setup EKS Cluster
+Install kubectl on AWS CLI
+
+Check status of eks cluster
+aws eks --region us-east-1 describe-cluster --name survey --query cluster.status
+
+Configure kubectl with eks api server credential
+aws eks --region us-east-1 update-kubeconfig --name survey
+
+Validate kubectl configuration to master node
+kubectl get svc
+
+Status of nodes
+kubectl get nodes
+
+Tag Docker image
+docker tag survey:v0.1 660632439801.dkr.ecr.us-east-1.amazonaws.com/survey:v0.1
+
+Login to ECR repo
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 660632439801.dkr.ecr.us-east-1.amazonaws.com/survey
+
+Push to ECR
+docker push 660632439801.dkr.ecr.us-east-1.amazonaws.com/survey:v0.1
+
+Apply Deployment
+kubectl apply -f Deployment.yml
+
+Expose using NodePort
+kubectl apply -f Service.yml
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
