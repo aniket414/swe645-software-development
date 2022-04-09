@@ -14,6 +14,7 @@ Steps:
 2. Tag the docker image and push it on dockerhub using the below command
     Command:
     > docker tag survey:amd64-v1.0 aniket414/survey:amd64-v1.0
+    > 
     > docker push aniket414/survey:amd64-v1.0
 3. Create two ubuntu ami EC2 instance, one for deployment and the other for Rancher setup
 4. SSH into the EC2 instance using the key value pair.
