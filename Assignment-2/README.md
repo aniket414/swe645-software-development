@@ -23,6 +23,7 @@ Steps:
 5. Install docker after updating
     Command:
     > sudo apt-get update
+    > 
     > sudo apt install docker.io
 6. Install Rancher using the following command
     Command:
