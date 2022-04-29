@@ -8,24 +8,24 @@ The survey form is also linked to the static website hosted on S3. To visit the 
 
 Steps:
 
-1. Build Docker image and containerize survey form using Docker
+1. Build Docker image and containerize survey form using Docker.<br>
     Command:
     > docker build -f infra/Dockerfile --tag survey:amd64-v1.0 .
-2. Tag the docker image and push it on dockerhub using the below command
+2. Tag the docker image and push it on dockerhub using the below command.<br>
     Command:
     > docker tag survey:amd64-v1.0 aniket414/survey:amd64-v1.0
     > 
     > docker push aniket414/survey:amd64-v1.0
 3. Create two ubuntu ami EC2 instance, one for deployment and the other for Rancher setup
-4. SSH into the EC2 instance using the key value pair.
+4. SSH into the EC2 instance using the key value pair.<br>
     Command:
     > ssh -i key-name.pem ubuntu@public-dns
-5. Install docker after updating
+5. Install docker after updating.<br>
     Command:
     > sudo apt-get update
     > 
     > sudo apt install docker.io
-6. Install Rancher using the following command
+6. Install Rancher using the following command.<br>
     Command:
     > sudo docker run --privileged -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
 7. Login inside and click on create cluster
