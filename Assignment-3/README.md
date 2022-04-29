@@ -26,7 +26,6 @@ Steps:
             "interest": "Friends",
             "likings": "Students"
         }
-        ```
 2. Create MySQL RDMS using AWS RDS and copy the URL, Port No, Username and Password.
 3. Using MySQLWorkbench the Database records can be viewed by connecting to the database using the above URL.
 4. Build Docker image and containerize survey api using Docker.<br>
