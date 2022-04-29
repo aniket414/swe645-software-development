@@ -10,6 +10,7 @@ Steps:
 
 1. Write REST API for GET and POST using Spring Boot framework on Spring Tool Suite 4.
     > GET api/v1.0/surveys
+    >
     > POST api/v1.0/surveys
     ```json
         {
@@ -34,6 +35,7 @@ Steps:
 5. Tag the docker image and push it on dockerhub using the below command.<br>
     Command:
     > docker tag survey-api:amd64-v1.0 aniket414/survey-api:amd64-v1.0
+    >
     > docker push aniket414/survey-api:amd64-v1.0
 6. Create Ubuntu ami EC2 instance and Amazon Linux 2 ami, one for deployment and the other for Rancher setup
 7. SSH into the EC2 instance using the key value pair.<br>
@@ -42,6 +44,7 @@ Steps:
 8. Install docker after updating.<br>
     Command:
     > sudo apt-get update
+    >
     > sudo apt install docker.io
 9. Install Rancher using the following command.<br>
     Command:
@@ -53,7 +56,9 @@ Steps:
 14. SSH into another Amazon Linux 2 instance and install docker.<br>
     Command:
     > sudo yum update
+    >
     > sudo yum install docker
+    >
     > sudo service docker start
 15. Run the above copied command from Rancher cluster setup and after some time go to the Rancher page and you should see cluster provisioning has started
 16. Enter the cluster just created on Rancher and click on Deployment under the Workload section. Alternatively you can also copy the kubeconfig file and if you have kubectl setup done on your local then paste the kubeconfig file content in .kube/config and you can easily access the cluster and deployment using kubectl from your local
