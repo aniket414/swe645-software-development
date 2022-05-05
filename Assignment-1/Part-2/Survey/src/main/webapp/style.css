@@ -1,0 +1,97 @@
+/* Aniket Pandey */
+* {
+	font-family: "Times New Roman", Times, serif;
+}
+
+body {
+	background-image: url("tower.jpeg");
+	background-size: cover;
+}
+
+#main {
+	width: 60%;
+	margin: auto;
+}
+
+label[type="Right"] {
+	margin-top: 10px;
+	margin-left: 245px;
+}
+
+label {
+	margin-top: 10px;
+	color: white;
+}
+
+legend {
+	color: white;
+}
+
+label span {
+	color: red;
+}
+
+fieldset {
+	margin-top: 10px;
+}
+
+#title {
+	text-align: center;
+	font-size: 42px;
+	color: #000000;
+}
+
+input[Type="text"], input[Type="address"], input[Type="date"], input[Type="email"],
+	select, textarea {
+	width: 99%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid rgb(53, 21, 21);
+	box-sizing: border-box;
+}
+
+input[Type="half-text"] {
+	width: 49%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 1px solid rgb(53, 21, 21);
+	box-sizing: border-box;
+}
+
+input[Type="Other-Text"] {
+	width: 49%;
+	padding: 6px 20px;
+	margin: 8px 0;
+	border: 1px solid rgb(53, 21, 21);
+	box-sizing: border-box;
+}
+
+#survey-form, p {
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: helvetica, sans-serif;
+	margin-left: 20%;
+	background-color: #006633;
+	margin: auto;
+	width: 60%;
+	padding: 1%;
+	margin-bottom: 20px;
+}
+
+.cancelbtn {
+	width: 60px;
+	height: 60px;
+	padding: 2px 2px;
+	background-color: #f44336;
+}
+
+.Submit_Reset {
+	text-align: center;
+}
+
+input[type=submit], input[type=reset] {
+	width: 30%;
+	padding: 12px 20px;
+	margin-inline: 10px;
+}
