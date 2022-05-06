@@ -1,0 +1,36 @@
+1. Backend API Development
+
+- API was not connecting to AWS RDS
+I checked the application.properties file and the port no for database was missing in the JDBC URL.
+
+- Unable to put data in database on calling POST api
+The survey model class I wrote didn't had getter and setter method and therefore the value were not stored in entity. To mitigate the problem added getter and setter methods for all the fields.
+
+- After deployment found that API was not accessible from UI because CORS was not enabled
+Read a few blogs online and found that enabling CORS will allow other origin request to be served. By default it is disabled for security purposes. Checked how to enable CORS request and by adding CORS annotation at controller level enabled CORS in the api.
+Ref: https://howtodoinjava.com/spring-boot2/spring-cors-configuration/
+
+- Was not aware what should be the steps in Dockerfile
+Check online and find a blog on medium which helped me with steps to write Dockerfile for Spring Boot API deployment. Also, referred the spring.io documentation for building docker images.
+Ref: https://spring.io/guides/topicals/spring-boot-docker/
+Ref: https://jrakibi.medium.com/deploy-your-application-with-ec2-docker-spring-boot-using-aws-cli-cb9f81260d29
+
+2. Frontend UI Development
+
+- How to capture selected checkboxes value
+I was not able to capture the values from checkboxes created for "What do you like about campus?". Found on stackoverflow a solution where they had created an array of object with id and its value in typescript and everytime a checkbox was checked a method was called which stored the values in a list and if the checkbox was deselected the value was deleted from the list. Finally before calling the POST api, the value stored in list was sent as a request body.
+
+- How to keep the submit button on form disabled until and unless the required fields are filled
+Checked stackoverflow solution and found that there is a property binding option [disabled] which keeps the button diabled until all the required fields value is invalid. Once the fields are filled with valid values the button is enabled.
+
+- Adding acknowledgement after submitting the form
+Checked Bootstrap 5 documentation on how to add a Toast to a form and used this toast for displaying acknowledgement whenever a form was successfully submitted.
+
+- Was not aware what should be the steps in Dockerfile
+Check online and find a blog on medium which helped me with steps to write Dockerfile for Angular UI deployment.
+Ref: https://referbruv.com/blog/posts/dockerizing-an-angular-application-for-release-build-and-deploy
+
+3. API and UI deployment
+
+- The deployment was restarting continously and was not stable
+I had used ubuntu EC2 machine for deployment and it was not at all stable. I checked online however couldn't find a reason as to why it was happening. My image was build correctly and I was also able to hit the API sometimes on the machine however the machine was not stable. So, I decided to switch from Ubuntu 20 to Amazon Linux 2 because almost every other blog talking about spring boot api deployment had used Amazon Linux machine. Finally after the switch I achieved a constant stability and my deployment was working as expected.
