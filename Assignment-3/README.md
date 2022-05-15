@@ -1,4 +1,4 @@
-# Assignment 2: Angular Front End Survey Form with Spring Boot Backend REST API deployed on EC2 with orchestration using Kubernetes
+# Assignment 3: Angular Front End Survey Form with Spring Boot Backend REST API deployed on EC2 with orchestration using Kubernetes
 
 The project is done using Angular, Spring Boot, RDS, EC2, Docker, Kubernetes, Rancher and AWS
 
