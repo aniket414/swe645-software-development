@@ -1,6 +1,6 @@
 # GMU SWE-645: Component Based Software Development
 
-This repository consists of all the assignments and homeworks done in order to complete the SWE645 course under Professor Vinod Dubey.
+This repository consists of all the assignments and homeworks done in order to complete the Spring 2022, SWE645 course under Professor Vinod Dubey.
 
 A detailed information on each assignment can be found inside the folders. Below is a brief overview of each of them.
 
